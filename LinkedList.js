@@ -91,4 +91,34 @@ class LinkedList {
       previous.next = null;
       this.size--;
     }
+
+    contains(data) {
+      let current = this.head;
+  
+      while(current){
+        if(current.data === data){
+          return true;
+        }
+  
+        current = current.next;
+      }
+  
+      return false;
+    }
+  
+    find(data) {
+      let current = this.head;
+      let index = 0;
+  
+      while(current){
+        if(current.data === data){
+          return index;
+        }
+  
+        index++;
+        current = current.next;
+      }
+  
+      return null;
+    }
 }
