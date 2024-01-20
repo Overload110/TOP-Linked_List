@@ -11,4 +11,21 @@ class LinkedList {
         this.size = 0;
     }
 
+    append(data) {
+      const node = new ListNode(data);
+  
+      if(!this.head){
+        this.head = node;
+      } else {
+        let current = this.head;
+  
+        while(current.next){
+          current = current.next;
+        }
+  
+        current.next = node;
+      }
+  
+      this.size++;
+    }
 }
