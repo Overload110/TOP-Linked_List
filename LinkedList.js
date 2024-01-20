@@ -127,7 +127,7 @@ class LinkedList {
       let result = '';
   
       while(current){
-        result += `( ${current.data} ) -> `;
+        result += `${current.data} -> `;
         current = current.next;
       }
   
@@ -148,7 +148,7 @@ class LinkedList {
         return;
       }
   
-      let node = new ListNode(data, previous.next);
+      let node = new Node(data, previous.next);
       previous.next = node;
       this.size++;
     }
@@ -170,3 +170,4 @@ class LinkedList {
       this.size--;
     }
 }
+module.exports = LinkedList;
