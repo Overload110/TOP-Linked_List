@@ -12,7 +12,7 @@ class LinkedList {
     }
 
     append(data) {
-      const node = new ListNode(data);
+      const node = new Node(data);
   
       if(!this.head){
         this.head = node;
@@ -26,6 +26,12 @@ class LinkedList {
         current.next = node;
       }
   
+      this.size++;
+    }
+
+    prepend(data) {
+      const node = new Node(data, this.head);
+      this.head = node;
       this.size++;
     }
 }
