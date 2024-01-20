@@ -135,4 +135,38 @@ class LinkedList {
   
       return result;
     }
+
+    insertAt(data, index) {
+      if(index === 0) {
+        this.prepend(data);
+        return;
+      }
+  
+      let previous = this.getAt(index-1);
+  
+      if(!previous) {
+        return;
+      }
+  
+      let node = new ListNode(data, previous.next);
+      previous.next = node;
+      this.size++;
+    }
+  
+    removeAt(index) {
+      if(index === 0) {
+        this.head = this.head.next;
+        this.size--;
+        return;
+      }
+  
+      let previous = this.getAt(index-1);
+  
+      if(!previous || !previous.next) {
+        return;
+      }
+  
+      previous.next = previous.next.next;
+      this.size--;
+    }
 }
