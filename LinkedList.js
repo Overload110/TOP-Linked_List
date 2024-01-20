@@ -68,4 +68,27 @@ class LinkedList {
   
       return null;
     }
+
+    pop() {
+      if(!this.head){
+        return null;
+      }
+  
+      if(this.size === 1){
+        this.head = null;
+        this.size--;
+        return;
+      }
+  
+      let previous = this.head;
+      let current = this.head;
+  
+      while(current.next){
+        previous = current;
+        current = current.next;
+      }
+  
+      previous.next = null;
+      this.size--;
+    }
 }
